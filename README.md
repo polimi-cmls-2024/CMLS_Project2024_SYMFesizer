@@ -1,1 +1,1 @@
-# SYMFesizer
+# SYMFesiz
