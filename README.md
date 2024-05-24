@@ -19,5 +19,10 @@ info principali su cosa usare, e dove trovare le cose qui sulla cartella
 most important info about sound synthesis and location of files 
 
 ### JUCE
+The project settings must be chosen as a 'Plugin->Basic' and named as desider. 
+As Plugin Formats is set 'VST3' and as Plugin Characteristics are set 'Plugin MIDI Input' and 'Plugin MIDI Output'.
+In Source, 'Editor.h', 'Editor.cpp', 'Processor.h' and 'Processor.cpp' are created by default. The first two couldn't be modified because they are important only for the graphic design of JUCE. The other two file must be filled following the comments on the code and the report. 
+In addition to the modules added by deafult, the module juce_dsp has to be implemented, without this one any DSP effect can be set. 
 
+In the project are implemented a chorus, a phaser, a compressor and a panner as effects and the connection with Supercollider, that sends OSCmessage to JUCE. 
 ### Processing
