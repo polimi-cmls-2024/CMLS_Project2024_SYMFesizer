@@ -26,3 +26,5 @@ In addition to the modules added by deafult, the module juce_dsp has to be imple
 
 In the project are implemented a chorus, a phaser, a compressor and a panner as effects and the connection with Supercollider, that sends OSCmessage to JUCE. 
 ### Processing
+The GUI is developed by the use of Processing. For the setup you need to install the following libraries: "G4P", "ControlP5" and "oscP5". You can find them directly inside the software, in the "Tools" menu. 
+From the GUI you can choose the chords you want to play on the MIDI keybord and also add and controlls each effect performed by JUCE.   
