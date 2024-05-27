@@ -5,7 +5,7 @@ The project implemented by the SYMFesizer group for the "Computer Music: Languag
 The sensor used is the KINECT, a sensor that allows human body parts to be picked up and scanned without the need to wear or hold anything. In particular, for the sake of time and simplicity, it was chosen to pick up the movements of the right hand only, along the y-coordinate to simulate real strumming which is affected by the speed.
 
 The left hand on the other hand still determines the desired chord type, but without being tracked by the sensor, simply by pressing a key on a MIDI keyboard. This key will become the root of the chord, and the musician can choose the chord type himself, between  major
-triad, minor triad, major 7th, minor 7th, dominant 7th, half-diminished 7th and diminished 7th.
+triad, minor triad, major 7<sup>th</sup>, minor 7<sup>th</sup>, dominant 7<sup>th</sup>, half-diminished 7<sup>th</sup> and diminished 7<sup>th</sup>.
 
 Thus, the general architecture of the system provides that the movement of the right hand is processed by the Touch Design software, specific to the Kinect, which sends OSCmessages to SuperCollider. In it, the creation of SinOsc and the Sound Synthesis of the acoustic guitar takes place. 
 
