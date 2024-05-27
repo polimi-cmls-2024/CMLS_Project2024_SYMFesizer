@@ -29,11 +29,12 @@ This setup enables real-time interaction and creative applications, ideal for pe
   - **Kinect Runtime**: Required runtime for running applications. [Download Kinect Runtime](https://www.microsoft.com/en-us/download/details.aspx?id=44561)
 
 ### Usage:
-Open the KinectSC.toe file in TouchDesigner.
+- Open the `KinectSC.toe` file in TouchDesigner. 
+- Ensure the Kinect is properly connected and recognized by the system. 
+- Run the project on SuperCollider.
+  
+Move your right hand up and down in front of the Kinect sensor. The Y-axis movement will be mapped to simulate strumming a guitar.
 
-Ensure the Kinect is properly connected and recognized by the system.
-
-Run the project on SuperCollider and move your right hand up and down in front of the Kinect sensor. The Y-axis movement will be mapped to simulate strumming a guitar.
 
 ## Synthesis and Control: SuperCollider
 **SuperCollider** is an engine for sound synthesis and algorithmic music composition.
