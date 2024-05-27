@@ -17,10 +17,12 @@ The Graphical User Interface was realised with Processing and includes the repli
 This project uses a Kinect sensor and TouchDesigner to capture the Y-axis movement of the right hand, simulating the action of playing a guitar. This setup enables real-time interaction and creative applications, ideal for performances, installations, or experimental music interfaces.
 ### Installation:
 **Hardware Setup:** Connect the Kinect sensor to your computer.
+
 **Software Requirements:**
 TouchDesigner
 Kinect SDK, Kinect ToolKit, Kinect Runtime
-### Usage
+
+### Usage:
 Open the kinect_guitar.toe file in TouchDesigner.
 Ensure the Kinect is properly connected and recognized by the system.
 Run the project on SuperCollider and move your right hand up and down in front of the Kinect sensor. The Y-axis movement will be mapped to simulate strumming a guitar.
