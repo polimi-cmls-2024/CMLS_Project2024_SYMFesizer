@@ -14,7 +14,8 @@ Four effects, created with JUCE, are included in Supercollider that modify the a
 The Graphical User Interface was realised with Processing and includes the replication of the MIDI keyboard with an octave. On each key there is a drop-down menu where you can select the chord you want. There are also knobs with which all JUCE effect parameters can be modified.  
 
 ## Kinect: Touch Designer
-This project uses a Kinect sensor and TouchDesigner to capture the Y-axis movement of the right hand, simulating the action of playing a guitar. This setup enables real-time interaction and creative applications, ideal for performances, installations, or experimental music interfaces.
+This project uses a Kinect sensor and TouchDesigner to capture the Y-axis movement of the right hand, simulating the action of playing a guitar. 
+This setup enables real-time interaction and creative applications, ideal for performances, installations, or experimental music interfaces.
 ### Installation:
 **Hardware Setup:** Connect the Kinect sensor to your computer.
 
@@ -26,7 +27,9 @@ This project uses a Kinect sensor and TouchDesigner to capture the Y-axis moveme
 
 ### Usage:
 Open the KinectSC.toe file in TouchDesigner.
+
 Ensure the Kinect is properly connected and recognized by the system.
+
 Run the project on SuperCollider and move your right hand up and down in front of the Kinect sensor. The Y-axis movement will be mapped to simulate strumming a guitar.
 
 ## Synthesis and Control: SuperCollider
