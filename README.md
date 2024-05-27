@@ -25,7 +25,7 @@ This project uses a Kinect sensor and TouchDesigner to capture the Y-axis moveme
 ***Kinect SDK, Kinect ToolKit, Kinect Runtime*** -> Driver
 
 ### Usage:
-Open the kinect_guitar.toe file in TouchDesigner.
+Open the KinectSC.toe file in TouchDesigner.
 Ensure the Kinect is properly connected and recognized by the system.
 Run the project on SuperCollider and move your right hand up and down in front of the Kinect sensor. The Y-axis movement will be mapped to simulate strumming a guitar.
 
