@@ -1,11 +1,14 @@
-
+// Boot the server
 s.boot;
-
+// Search for the plugin
 VSTPlugin.search(nil,"D:/Documents/Polimi/LM/Year 1/Semester 2/Computer Music Languages and Systems/SYMFesizer/SYMFesizer/Builds/VisualStudio2022");
-// Define SynthDef for plucked muted string
+
+
 (
+// Bus that takes synth sounds to the effects
 ~myBus = Bus.audio(s,2);
 
+// Define SynthDef for plucked muted string
 SynthDef(\muted_string, {
     arg out = 0, freq = 440, decayTime = 0.01;
     var env = EnvGen.kr(Env.perc(0.01, decayTime));
@@ -15,6 +18,7 @@ SynthDef(\muted_string, {
     Out.ar(~myBus, sound);
 }).add;
 
+// Define SynthDef for strummed string
 SynthDef(\string, {arg out=0, freq=440, pan=0, sustain=0.5, amp=0.5;
 	var pluck, period, string;
 	pluck = PinkNoise.ar(Decay.kr(Impulse.kr(0), 0.05));
@@ -25,36 +29,35 @@ SynthDef(\string, {arg out=0, freq=440, pan=0, sustain=0.5, amp=0.5;
 	Out.ar(~myBus, string)
 }).add;
 
+// Define SynthDef to wrap the VSTPlugin UGen in a synth
 SynthDef(\effetto, { arg bus;
 	Out.ar(Bus.new('audio',0,2,s), VSTPlugin.ar(In.ar(bus, 2), numOut: `[2]));
 }).add;
 
+// control bus to receive kinect signal
 ~my_right_hand = Bus.control(s, 1);
 
-
-// OSCFunc({|msg, time, addr, recvPort|
-	// ~my_right_hand.set(msg[1]);
-	// postln(msg[1]);
-// },'\p1/hand_r:ty', s.addr);
-
+// handle kinect signal
 OSCdef(\receiveOSC_Y, {
 	arg msg, time, addr, recvPort;
 	~my_right_hand.set(msg[1]);
-	/*postln(msg[1]);*/
+	//postln(msg[1]);
 }, '\p1/hand_r:ty', nil, 57120);
 
 )
 
 (
-
+// define effect synth
 ~fx = VSTPluginController(Synth(\effetto, [\bus, ~myBus])).open("SYMFesizer.vst3");
 )
 
 (
 var maj,min,maj7,min7,dom7,min7b5,dim7;
 
+// define threshold for each string. kinect signal range is from 0 to 50.
 ~stringThreshs = [22,23,24,25,26,27];
 
+// functions that detect when kinect signal passes each string threshold and send a trigger
 6.do({ |i|
 	{
 		var down, up;
@@ -68,7 +71,7 @@ var maj,min,maj7,min7,dom7,min7b5,dim7;
 
 
 
-
+// function that converts an array of fret numbers to an array of MIDI values
 ~fretsToChord = { arg list;
 	var open = [40, 45, 50, 55, 59, 64];
 	var my_chord = [0, 0, 0, 0, 0, 0];
@@ -82,6 +85,7 @@ var maj,min,maj7,min7,dom7,min7b5,dim7;
 	my_chord;
 };
 
+// arrays of chord voicings as fret numbers
 maj = [['x', 3, 2, 0, 1, 0],['x', 4, 6, 6, 6, 4],['x', 'x', 0, 2, 3, 2],['x', 6, 8, 8, 8, 6],[0, 2, 2, 1, 0, 0],[1, 3, 3, 2, 1, 1],[2, 4, 4, 3, 2, 2],[3, 2, 0, 0, 0, 3],[4, 6, 6, 5, 4, 4],['x', 0, 2, 2, 2, 0],
 ['x', 1, 3, 3, 3, 1],['x', 2, 4, 4, 4, 2]];
 dom7 = [['x', 3, 2, 3, 1, 0],['x', 4, 6, 4, 6, 4],['x', 5, 7, 5, 7, 5],['x', 6, 8, 6, 8, 6],[0, 2, 0, 1, 0, 0],[1, 3, 1, 2, 1, 1],[2, 4, 2, 3, 2, 2],[3, 2, 0, 0, 0, 1],[4, 6, 4, 5, 4, 4],['x', 0, 2, 0, 2, 0],['x', 1, 3, 1, 3, 1],['x', 2, 4, 2, 4, 2]];
@@ -91,16 +95,17 @@ min7 = [['x', 3, 5, 3, 4, 3],['x', 4, 6, 3, 5, 4],['x', 5, 7, 5, 6, 5],['x', 6, 
 min7b5 = [['x', 3, 4, 3, 4, 'x'],['x', 4, 5, 3, 5, 'x'],['x', 5, 6, 5, 6, 'x'],['x', 6, 7, 6, 7, 'x'],['x', 7, 8, 7, 8, 'x'],['x', 8, 9, 8, 9, 'x'],['x', 9, 10, 9, 10, 'x'],[3, 'x', 3, 3, 2, 'x'],[4, 'x', 4, 4, 3, 'x'],[5, 'x', 5, 5, 4, 'x'],['x', 1, 2, 1, 2, 'x'],['x', 2, 3, 2, 3, 'x']   ];
 dim7 = [['x', 3, 4, 2, 4, 'x'],['x', 4, 5, 3, 5, 'x'],['x', 5, 6, 4, 6, 'x'],['x', 6, 7, 5, 7, 'x'],['x', 7, 8, 6, 8, 'x'],['x', 8, 9, 7, 9, 'x'],['x', 9, 10, 8, 10, 'x'],[3, 'x', 2, 3, 2, 'x'],[4, 'x', 3, 4, 3, 'x'],[5, 'x', 4, 5, 4, 'x'],[6, 'x', 5, 6, 5, 'x'],['x', 2, 3, 1, 3, 'x']   ];
 
-
+// combine chords in a 3d array: ~allChords[Type][Starting Note][String number]
 ~allChords = [maj,min,maj7,min7,dom7,min7b5,dim7];
 
+// applies function to all the chords
 7.do({|i|
 	12.do({|j|
 		~allChords[i][j] = ~fretsToChord.value(~allChords[i][j]);
 	});
 });
 
-
+// INIT Preset
 ~preset = Array.fill(12, { Array.fill(6, { 0 }) });
 
 ~preset = [
@@ -118,12 +123,14 @@ dim7 = [['x', 3, 4, 2, 4, 'x'],['x', 4, 5, 3, 5, 'x'],['x', 5, 6, 4, 6, 'x'],['x
 	min7b5[11]
 ];
 
-
+// define socket
 NetAddr("127.0.0.1", 57120);
 
+// arrays to store current preset
 ~types = Array.fill(12,{0});
 ~roots = Array.fill(12,{0});
 
+// function that updates preset
 ~updatePreset = {
 	12.do({ |index|
 		var type,root;
@@ -133,6 +140,8 @@ NetAddr("127.0.0.1", 57120);
 	});
 	postln("preset updated");
 };
+
+// Functions that receive OSC Messages from the GUI
 OSCdef('/chords',
 	{
 		arg msg;
@@ -315,17 +324,18 @@ OSCdef('/panner/value', //-1,1
 
 
 (
-// handle MIDI and receiving triggers from previous code => play notes
+// Block that handles MIDI and receiving triggers from previous code to play the synths
 var on,off;
 var stringNotes = ~preset[0];
 var stringSynths = Array.newClear(6);
-var mute = true;
+var mute = true;    // flag for muted string sound
 var midiArray = []; // to track pressed notes
 var popped = 0;
 
 MIDIClient.init;
 MIDIIn.connectAll;
 
+// triggered by pressing a MIDI key
 on = MIDIFunc.noteOn({ |veloc, num, chan, src|
 	stringNotes = ~preset[num%12];
 	midiArray.add(num);
@@ -333,6 +343,7 @@ on = MIDIFunc.noteOn({ |veloc, num, chan, src|
 
 });
 
+// triggered by releasing a MIDI key
 off = MIDIFunc.noteOff({ |veloc, num, chan, src|
 	midiArray.remove(num);
 	if(midiArray.isEmpty){
@@ -342,9 +353,7 @@ off = MIDIFunc.noteOff({ |veloc, num, chan, src|
 	};
 });
 
-// q = { on.free; off.free; };
-// when done:   q.value;
-
+// Receiving triggers from the server, play the notes based on the current preset and pressed key
 OSCFunc({|msg, time, addr, recvPort| var freq,note;
 			("string: " + msg[2] + (if(msg[3] == 0){" down"}{" up"})).postln;
 	if( stringSynths[msg[2]].notNil == true ) {stringSynths[msg[2]].free};
