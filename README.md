@@ -61,8 +61,28 @@ In addition to the modules added by deafult, the module juce_dsp has to be imple
 In the project are implemented a chorus, a phaser, a compressor and a panner as effects and the connection with Supercollider, that sends OSCmessage to JUCE. 
 
 ## GUI: Processing
-The GUI is developed by the use of Processing. For the setup you need to install the following libraries: "G4P", "ControlP5" and "oscP5". You can find them directly inside the software, in the "Tools" menu. 
-From the GUI you can choose the chords you want to play on the MIDI keybord and also add and controlls each effect performed by JUCE.   
+The GUI is developed by the use of Processing. For the setup you need to install the following libraries: 
+- **G4P**, by Peter Lager
+- **ControlP5**, by Andreas Shleger
+- **oscP5**, by Andreas Shleger.
+
+You can find them directly inside the software, in the "Tools" menu. 
+From the GUI you can choose the chords you want to play on the MIDI keybord and also add and controlls each effect performed by JUCE. At the opening, an initial setup will be provided to the users, from which they can start their own personalization. The keys are setted in the following order, from the left to the right: 
+- Cmaj7
+- A7
+- Dm7
+- B7
+- Em7
+- Fmaj7
+- D7
+- G7
+- E7
+- Am7
+- C7
+- Bm7b5
+
+So we have diatonic chords in C major scale on the white keys, and secondary dominant chords on the black keys that resolve on the following diatonic ones. 
+Other configuration are let to the user's fantasy.
 
 
 ### Project designed and developed by students: LIERA Stefano, ABOUELAZM Youssef, PANETTIERI Francesco, BRUNI Marco. 
