@@ -45,7 +45,7 @@ These are the functions of each block:
 - Define busses and SynthDefs, handle kinect signal
 - Define effect synth
 - Handle note triggers, define list of chords, handle **GUI** messages
-- Handle MIDI, and play synth sound based on available data
+- Handle **MIDI**, and play synth sound based on available data
 
 ## Effects: JUCE
 The project settings must be chosen as a 'Plugin->Basic' and named as desider. 
