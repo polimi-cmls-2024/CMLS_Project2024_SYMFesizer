@@ -19,7 +19,10 @@ This project uses a Kinect sensor and TouchDesigner to capture the Y-axis moveme
 **Hardware Setup:** Connect the Kinect sensor to your computer.
 
 **Software Requirements:**
+#### Tool
 TouchDesigner
+
+#### Driver
 Kinect SDK, Kinect ToolKit, Kinect Runtime
 
 ### Usage:
