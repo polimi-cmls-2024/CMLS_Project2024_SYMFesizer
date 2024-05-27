@@ -68,18 +68,18 @@ The GUI is developed by the use of Processing. For the setup you need to install
 
 You can find them directly inside the software, in the "Tools" menu. 
 From the GUI you can choose the chords you want to play on the MIDI keybord and also add and controlls each effect performed by JUCE. At the opening, an initial setup will be provided to the users, from which they can start their own personalization. The keys are setted in the following order, from the left to the right: 
-- Cmaj7
+- CΔ
 - A7
-- Dm7
+- D-7
 - B7
-- Em7
-- Fmaj7
+- E-7
+- FΔ7
 - D7
 - G7
 - E7
-- Am7
+- A-7
 - C7
-- Bm7b5
+- Bø
 
 So we have diatonic chords in C major scale on the white keys, and secondary dominant chords on the black keys that resolve on the following diatonic ones. 
 Other configuration are let to the user's fantasy.
