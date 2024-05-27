@@ -1,4 +1,9 @@
 # SYMFesizer
+## Video Demo
+
+https://github.com/polimi-cmls-2024/CMLS_Project2024_SYMFesizer/assets/64912222/4d5c80ad-3c8e-4f1a-8f57-b3d7b92c0d24
+
+
 ## Project Settings
 The project implemented by the SYMFesizer group for the "Computer Music: Languages and Systems" project consists of the development of an 'Air Guitar', i.e. an acoustic guitar in the air without the presence of any physical instrument. 
 
