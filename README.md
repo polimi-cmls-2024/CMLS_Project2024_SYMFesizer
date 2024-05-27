@@ -16,7 +16,7 @@ The Graphical User Interface was realised with Processing and includes the repli
 ## Kinect: Touch Designer
 This project uses a Kinect sensor and TouchDesigner to capture the Y-axis movement of the right hand, simulating the action of playing a guitar. 
 This setup enables real-time interaction and creative applications, ideal for performances, installations, or experimental music interfaces.
-### Installation
+### Installation:
 
 **Hardware Setup**: Connect the Kinect sensor to your computer.
 
@@ -27,8 +27,6 @@ This setup enables real-time interaction and creative applications, ideal for pe
   - **Kinect SDK**: The essential software development kit for Kinect. [Get Kinect SDK](https://developer.microsoft.com/en-us/windows/kinect)
   - **Kinect Toolkit**: Additional utilities for enhanced development. [Download Kinect Toolkit](https://www.microsoft.com/en-us/download/details.aspx?id=40276)
   - **Kinect Runtime**: Required runtime for running applications. [Download Kinect Runtime](https://www.microsoft.com/en-us/download/details.aspx?id=44561)
-
-
 
 ### Usage:
 Open the KinectSC.toe file in TouchDesigner.
