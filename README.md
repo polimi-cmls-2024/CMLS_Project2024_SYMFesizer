@@ -21,6 +21,7 @@ This project uses a Kinect sensor and TouchDesigner to capture the Y-axis moveme
 **Software Requirements:**
 
 ***TouchDesigner*** -> Tool
+
 ***Kinect SDK, Kinect ToolKit, Kinect Runtime*** -> Driver
 
 ### Usage:
