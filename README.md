@@ -38,7 +38,7 @@ SynthDef(\string, {arg out=0, freq=440, pan=0, sustain=0.5, amp=0.5;
 ```
 A burst of pink noise is generated triggered by an impulse, decaying over 0.05 seconds. This is then passed through a comb filter with delay time equal to the reciprocal of the frequency to simulate string resonance. The signal is then panned to two channels, passed through a low pass filter at 12 KHz, and the DC offset is removed. The silence is detected to free the synth when there is no more sound, and the 2 channels are sent to a bus. A second `SynthDef` was used to model the sound of muted strings using enveloped noise.
 
-\subsubsection*{Receiving OSC and MIDI messages}
+## Receiving OSC and MIDI messages
 OSC messages are received with information from the **GUI**, from the **Kinect**, and triggers from within SuperCollider to generate string sounds.
 
 Messages from the **GUI** are used to adjust parameters for the effects, as well as assign chords to **MIDI** keys.
