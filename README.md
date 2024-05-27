@@ -13,7 +13,7 @@ Four effects, created with JUCE, are included in Supercollider that modify the a
 
 The Graphical User Interface was realised with Processing and includes the replication of the MIDI keyboard with an octave. On each key there is a drop-down menu where you can select the chord you want. There are also knobs with which all JUCE effect parameters can be modified.  
 
-## Kinect:
+## Kinect
 This project uses a Kinect sensor and TouchDesigner to capture the Y-axis movement of the right hand, simulating the action of playing a guitar. 
 This setup enables real-time interaction and creative applications, ideal for performances, installations, or experimental music interfaces.
 ### Installation:
