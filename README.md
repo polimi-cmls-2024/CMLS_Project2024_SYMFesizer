@@ -25,8 +25,9 @@ This setup enables real-time interaction and creative applications, ideal for pe
 - **TouchDesigner**: A versatile tool for real-time interactive multimedia creation. [Download TouchDesigner](https://derivative.ca/)
 - **Kinect Drivers**: Ensure your Kinect sensor is fully operational by installing the necessary components:
   - **Kinect SDK**: The essential software development kit for Kinect. [Get Kinect SDK](https://developer.microsoft.com/en-us/windows/kinect)
-  - **Kinect Toolkit**: Additional utilities for enhanced development, included with the Kinect SDK.
-  - **Kinect Runtime**: Required runtime for running applications, included with the Kinect SDK.
+  - **Kinect Toolkit**: Additional utilities for enhanced development. [Download Kinect Toolkit](https://www.microsoft.com/en-us/download/details.aspx?id=40276)
+  - **Kinect Runtime**: Required runtime for running applications. [Download Kinect Runtime](https://www.microsoft.com/en-us/download/details.aspx?id=44561)
+
 
 
 ### Usage:
